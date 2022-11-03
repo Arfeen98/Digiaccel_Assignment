@@ -1,0 +1,8 @@
+
+export const QUIZ_SUCCESS= "QUIZ_SUCCESS";
+export const QUIZ_REQUEST= "QUIZ_REQUEST";
+export const QUIZ_FAILURE= "QUIZ_FAILURE";
+
+
+
+export const STUDENT_SUCCESS = "STUDENT_SUCCESS";

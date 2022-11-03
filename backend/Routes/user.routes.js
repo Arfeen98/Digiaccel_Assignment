@@ -45,7 +45,7 @@ userController.post("/login",async (req,res)=>{
         // res === true
         if(result){
             let token = jwt.sign({email,userId}, process.env.SECRET);
-            return res.send({"message":"Login Succesfull", "token":token})
+            return res.send({"message":"Login Succesfull", "token":token,"user":user})
         }
         else{
             return res.send("Invalid credentials");

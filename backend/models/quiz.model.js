@@ -1,10 +1,8 @@
 const mongoose = require("mongoose");
 
 const quizSchema = new mongoose.Schema({
-  cattegory: { type: String },
-  type : { type: String },
   question:{type:String},
-  difficulty: { type: String },
+  difficulty: { type: String || Number },
   correct_answer:{ type: String },
   incorrect_answers:{ type:Array},
 });
