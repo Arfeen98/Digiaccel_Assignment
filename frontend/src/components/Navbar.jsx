@@ -11,7 +11,7 @@ import {
   import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import { useSelector } from 'react-redux';
   
-  const Links = ['Signup', 'Login','Main','Logout'];
+  const Links = ['Signup', 'Login','Quiz','Logout'];
   
   const NavLink = ({ children }) => (
     <Link
@@ -29,9 +29,9 @@ import { useSelector } from 'react-redux';
   
   export default function Navbar() {
     const { isOpen, onOpen, onClose } = useDisclosure();
-    const {data}=useSelector((state)=>state.AuthReducer);
-    console.log(data);
-    const Name=localStorage.getItem("name")
+    // const {data}=useSelector((state)=>state.AuthReducer);
+    // console.log(data);
+    // const Name=localStorage.getItem("name")
   
     return (
       <>
@@ -45,7 +45,7 @@ import { useSelector } from 'react-redux';
               onClick={isOpen ? onClose : onOpen}
             />
             <HStack spacing={8} alignItems={'center'}>
-              <Box>Tuition Student Records</Box>
+              {/* <Box>Tuition Student Records</Box> */}
               <HStack
                 as={'nav'}
                 spacing={4}
@@ -55,7 +55,7 @@ import { useSelector } from 'react-redux';
                 ))}
               </HStack>
             </HStack>
-            <Flex alignItems={'center'}>{`Name: ${Name}`}</Flex>
+            {/* <Flex alignItems={'center'}>{`Name: ${Name}`}</Flex> */}
           </Flex>
   
           {isOpen ? (

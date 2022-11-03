@@ -39,7 +39,7 @@ export const SignupGet =(email,password,name)=>(dispatch)=>{
     dispatch(signup_req());
     return axios({
         method:"post",
-        url:"https://infinite-citadel-08024.herokuapp.com/signup",
+        url:"http://localhost:7000/signup",
         data:{
             email:email,
             password:password,
@@ -57,7 +57,7 @@ export const LoginGet =(email,password)=>(dispatch)=>{
     dispatch(login_req());
     return axios({
         method:"post",
-        url:"https://infinite-citadel-08024.herokuapp.com/login",
+        url:"http://localhost:8080/login",
         data:{
             email:email,
             password:password
@@ -73,25 +73,6 @@ export const LoginGet =(email,password)=>(dispatch)=>{
     })
 }
 
-export const StudentGet =(name,age,gender,test)=>(dispatch)=>{
-    dispatch(login_req());
-    return axios({
-        method:"post",
-        url:"https://infinite-citadel-08024.herokuapp.com/student/create",
-        data:{
-            name:name,
-            age:age,
-            gender:gender,
-            test:test
-        }
-    }).then((res)=>{
-        // console.log(res.data.token);
-        dispatch(login_succ(res.data));
-    }).catch((err)=>{
-        dispatch(login_fail());
-        console.log(err);
-    })
-}
 export const logout = () => (dispatch) => {
     dispatch({ type: LOGOUT });
     localStorage.removeItem("name");

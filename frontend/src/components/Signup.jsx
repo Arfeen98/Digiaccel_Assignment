@@ -19,12 +19,12 @@ import { SignupGet } from '../Redux/authReducer/action';
   export default function Signup() {
     const {message}=useSelector((state)=>state.AuthReducer);
     const [email,setEmail]=useState('');
-    const [name,setName]=useState('');
+    const [role,setRole]=useState('');
     const [password,setPassword]=useState('');
     const dispatch = useDispatch();
     const handleClick=(e)=>{
         e.preventDefault();
-        dispatch(SignupGet(email,password,name));
+        dispatch(SignupGet(email,password,role));
     }
     return (
       <Flex
@@ -46,9 +46,9 @@ import { SignupGet } from '../Redux/authReducer/action';
             boxShadow={'lg'}
             p={8}>
             <Stack spacing={4}>
-              <FormControl id="name">
-                <FormLabel>Name</FormLabel>
-                <Input type="text" value={name} onChange={(e)=>setName(e.target.value)}/>
+              <FormControl id="role">
+                <FormLabel>role</FormLabel>
+                <Input type="text" value={role} onChange={(e)=>setRole(e.target.value)}/>
               </FormControl>
               <FormControl id="email">
                 <FormLabel>Email address</FormLabel>

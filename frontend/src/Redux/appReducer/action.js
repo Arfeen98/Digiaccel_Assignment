@@ -7,7 +7,6 @@ export const quiz_suc = (data)=>({
     payload:data
 })
 
-
 export const quiz_req =()=>({
     type:QUIZ_REQUEST
 })
@@ -20,7 +19,7 @@ export const QuizGet =(category,num)=>(dispatch)=>{
     dispatch(quiz_req());
     return axios({
         method:"get",
-        url:`https://thawing-plains-46147.herokuapp.com/quiz?cattegory=${category}&page=${num}&limit=1`,
+        url:`http://localhost:7000/quiz?cattegory=${category}&page=${num}&limit=1`,
     }).then((res)=>{
         console.log(res.data.results);
         dispatch(quiz_suc(res.data.results));
