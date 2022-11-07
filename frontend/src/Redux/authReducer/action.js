@@ -34,16 +34,16 @@ export const login_req =()=>({
 
 
 
-export const SignupGet =(email,password,name)=>(dispatch)=>{
+export const SignupGet =(email,password,role)=>(dispatch)=>{
     console.log(email,password);
     dispatch(signup_req());
     return axios({
         method:"post",
-        url:"http://localhost:7000/signup",
+        url:"https://enigmatic-headland-84986.herokuapp.com/signup",
         data:{
             email:email,
             password:password,
-            name:name
+            role:role
         }
     }).then((res)=>{
         // console.log(res);
@@ -56,25 +56,24 @@ export const LoginGet =(email,password)=>(dispatch)=>{
     console.log(email,password);
     dispatch(login_req());
     return axios({
+        url:"https://enigmatic-headland-84986.herokuapp.com/login",
         method:"post",
-        url:"http://localhost:8080/login",
         data:{
             email:email,
             password:password
         }
     }).then((res)=>{
-        // console.log(res.data.token);
+        console.log(res.data);
         dispatch(login_succ(res.data));
         localStorage.setItem('token',res.data.token);
-        localStorage.setItem('name',res.data.name);
+        localStorage.setItem('role',res.data.user.role);
     }).catch((err)=>{
         dispatch(login_fail());
         console.log(err);
     })
 }
-
 export const logout = () => (dispatch) => {
     dispatch({ type: LOGOUT });
-    localStorage.removeItem("name");
+    localStorage.removeItem("role");
     localStorage.removeItem("token");
   };

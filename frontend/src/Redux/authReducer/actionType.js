@@ -8,5 +8,4 @@ export const LOGIN_FAILURE = "LOGIN_FAILURE";
 export const LOGIN_REQUEST = "LOGIN_REQUEST";
 
 export const LOGOUT = "logout";
-
 export const STUDENT_SUCCESS = "STUDENT_SUCCESS";

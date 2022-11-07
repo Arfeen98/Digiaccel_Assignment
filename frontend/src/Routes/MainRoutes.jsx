@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar'
 import Signup from '../components/Signup'
 import Home from '../pages/Home'
 import Quiz from '../pages/Quiz'
+import QuizPost from '../pages/QuizPost'
 
 const MainRoutes = () => {
   return (
@@ -15,6 +16,7 @@ const MainRoutes = () => {
        <Route path='/Signup' element={<Signup/>}/>
        <Route path='/Login' element={<Login/>}/>
        <Route path='/Quiz' element={<Quiz/>}/>
+       <Route path='/Quizpost' element={<QuizPost/>}/>
       </Routes>
     </div>
   )

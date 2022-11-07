@@ -15,10 +15,6 @@ quizController.post("/quizpost",async(req,res)=>{
    res.status(201).send(quest)
 })
 
-
-
-
-
 quizController.get("/", async (req, res) => {
   let { page, limit } = req.query;
 console.log(page,limit)
@@ -29,7 +25,6 @@ console.log(page,limit)
     const results = await quiz.find(cattegory).limit(limit * 1).skip((page - 1) * limit);;
     res.send({ message: "Get request successful", results });
   } 
-
   else {
     console.log("23",limit)
     var results = await quiz.find({})

@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import styles from './Home.module.css';
 import {useDispatch} from 'react-redux';
 import { QuizGet } from '../Redux/appReducer/action';
+import { Heading, Text } from '@chakra-ui/react';
 const Home = () => {
     const [name,setName]=useState('');
     const [category,setCategory]=useState('');
@@ -11,12 +12,14 @@ const Home = () => {
     const dispatch=useDispatch();
     const [num,setNum]=useState('');
     const navigate=useNavigate('');
+
     const handleClick=(e)=>{
         e.preventDefault();
         dispatch(QuizGet(category,num))
         navigate('/quiz');
     }
   return (
+    <>
     <div className={styles.container}>
       <h1>Set Up Your Quiz</h1>
         <form action="" id="form">
@@ -41,6 +44,7 @@ const Home = () => {
            <input type="submit" id="submit" onClick={(e)=>handleClick(e)} value="Start a Quiz"/>           
         </form>
     </div>
+    </>
   )
 }
 
