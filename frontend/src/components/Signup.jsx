@@ -14,6 +14,7 @@ import {
   } from '@chakra-ui/react';
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import { SignupGet } from '../Redux/authReducer/action';
   
   export default function Signup() {
@@ -21,10 +22,12 @@ import { SignupGet } from '../Redux/authReducer/action';
     const [email,setEmail]=useState('');
     const [role,setRole]=useState('');
     const [password,setPassword]=useState('');
+    const navigate=useNavigate();
     const dispatch = useDispatch();
     const handleClick=(e)=>{
         e.preventDefault();
         dispatch(SignupGet(email,password,role));
+            navigate('/Login');
     }
     return (
       <Flex

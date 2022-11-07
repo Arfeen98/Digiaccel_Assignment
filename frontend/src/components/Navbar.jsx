@@ -11,7 +11,7 @@ import {
   import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import { useSelector } from 'react-redux';
   
-  const Links = ['Signup', 'Login','Quiz','Logout','Quizpost'];
+  const Links = ['Home','Signup', 'Login','Quiz','Logout','Quizpost'];
   
   const NavLink = ({ children }) => (
     <Link
